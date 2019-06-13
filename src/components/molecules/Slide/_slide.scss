@@ -1,0 +1,13 @@
+@import "../../../themes/v1/scss/common";
+
+.slide {
+
+	&__inner {
+
+	}
+
+	&--primary {
+		background: $primary;
+		color: $white;
+	}
+}

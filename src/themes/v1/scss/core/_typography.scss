@@ -1,0 +1,50 @@
+/** ====================================================================================================================
+// Typography
+// ================================================================================================================== */
+
+@import "../common";
+
+body {
+	font-family: $font-text, sans-serif;
+	font-size: 16px;
+	color: $off-black;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: $font-heading, sans-serif;
+	font-weight: 500;
+	margin: 0;
+	clear: both;
+}
+
+h1 {
+	font-size: em(24);
+	margin-bottom: em(16, 24);
+}
+
+h2 {
+	font-size: em(20);
+	margin-bottom: em(16, 22);
+}
+
+h3 {
+	font-size: em(18);
+	margin-bottom: em(16, 20);
+}
+
+h4, h5 {
+	font-size: em(16);
+	margin-bottom: em(16, 18);
+}
+
+p {
+	margin: 0 0 em(8) 0;
+	line-height: em(24);
+
+	br {
+		content: '';
+		display: block;
+		margin-bottom: em(8);
+		clear: both;
+	}
+}
