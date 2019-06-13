@@ -1,0 +1,22 @@
+{
+  "direction": "vertical",
+  "centeredSlides": true,
+  "containerModifierClass": "home__swiper--",
+  "containerClass": "home__swiper",
+  "wrapperClass": "home__swiper-wrapper",
+  "slideClass": "home__section",
+  "slideActiveClass": "home__section--active",
+  "slideNextClass": "home__section--next",
+  "pagination": {
+    "el": ".home__pagination",
+    "clickable": true,
+    "bulletClass": "home__bullet",
+    "bulletActiveClass": "home__bullet--active",
+    "modifierClass": "home__pagination--",
+    "clickableClass": "home__pagination--clickable"
+  },
+  "a11y": {
+    "enabled": false
+  },
+  "mousewheel": true
+}
