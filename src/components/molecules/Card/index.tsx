@@ -1,9 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import classNames from 'classnames';
 import './_card.scss';
 
-const Card = (props) => {
+interface IProps {
+	children?: React.ReactNode,
+	className?: string,
+	logo: string,
+	title: string,
+}
+
+export const Card: React.SFC<IProps> = (props) => {
 	const componentClass = classNames(props.className, 'card');
 
 	return (
@@ -19,13 +25,6 @@ const Card = (props) => {
 			</div>
 		</div>
 	);
-};
-
-Card.propTypes = {
-	children: PropTypes.node,
-	className: PropTypes.string,
-	title: PropTypes.string,
-	logo: PropTypes.string,
 };
 
 export default Card;

@@ -1,13 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Switch, Route } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 import 'sanitize.css';
 import '../themes/v1/scss/style.scss';
 
 // Components
 import Header from './organisms/Header';
-
-// Pages
+import Nav from './organisms/Nav';
 import Home from './pages/Home/index';
 import Test from './pages/Test/index';
 
@@ -17,13 +16,20 @@ const App: React.FC = () => {
       <Helmet titleTemplate="Ray Ranola - %s" defaultTitle="Ray Ranola - Full Stack Developer">
         <meta name="description" content="" />
       </Helmet>
-      <Header />
+      <Header>
+        <Nav>
+          <Link to="/" className="nav__link" title="Home">
+            Home
+          </Link>
+          <Link to="/about" className="nav__link" title="About">
+            About
+          </Link>
+        </Nav>
+      </Header>
       <main className="main">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/test" component={Test} />
-          {/*<Route exact path="/home" component={Home} />*/}
-          {/*<Route exact path="/test" component={Test} />*/}
+          <Route exact path="/about" component={Test} />
         </Switch>
       </main>
     </React.Fragment>

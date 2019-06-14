@@ -1,22 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Swiper from 'react-id-swiper';
-import swiperConfig from './swiper.config';
+import swiperConfig from './swiperConfig.json';
 import 'react-id-swiper/src/styles/scss/swiper.scss';
 import './_skills.scss';
 
 import Slide from '../../molecules/Slide';
 import Card from '../../molecules/Card';
 
-export default class Carousel extends React.Component {
-	static propTypes = {
-		className: PropTypes.string,
-	};
+interface IProps {
+	className?: string,
+}
 
-	constructor(props) {
+export class Skills extends React.PureComponent<IProps> {
+	constructor(props: IProps) {
 		super(props);
-		this.state = {};
 	}
 
 	render() {
@@ -67,3 +65,5 @@ export default class Carousel extends React.Component {
 		);
 	}
 }
+
+export default Skills;

@@ -1,14 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Swiper from 'react-id-swiper';
-import swiperConfig from './swiperconfig.json';
+import swiperConfig from './swiperConfig.json';
 import 'react-id-swiper/src/styles/scss/swiper.scss';
 import './_home.scss';
 
 import Slide from '../../molecules/Slide';
 import Hero from '../../templates/Hero'
+import Skills from '../../templates/Skills';
 
-export default class Home extends React.Component {
+export class Home extends React.PureComponent {
 
 	render() {
 		return (
@@ -22,10 +23,12 @@ export default class Home extends React.Component {
 						<Hero />
 					</Slide>
 					<Slide slideTheme="white" slideType="div">
-						<div>Hi there</div>
+						<Skills />
 					</Slide>
 				</Swiper>
 			</div>
 		);
 	}
 }
+
+export default Home;

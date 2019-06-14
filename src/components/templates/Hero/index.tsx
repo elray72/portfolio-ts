@@ -2,14 +2,13 @@ import * as React from 'react';
 import classNames from 'classnames';
 import './_hero.scss';
 
-interface HomeProps {
+interface IProps {
 	className?: string,
 }
 
-export class Home extends React.PureComponent<HomeProps> {
-	constructor(props: HomeProps) {
+export class Home extends React.PureComponent<IProps> {
+	constructor(props: IProps) {
 		super(props);
-		this.state = {};
 	}
 
 	render() {

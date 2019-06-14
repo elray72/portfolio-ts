@@ -43,7 +43,7 @@ class Header extends Component {
 					<div className="header__logo" />
 					<div className={headerMenuClass}>
 						<Hamburger onClick={this.handleHamburgerClick} />
-						<Nav />
+						{this.props.children}
 					</div>
 				</div>
 				<div className="header__overlay" onClick={this.handleOverlayClick} />
