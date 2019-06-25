@@ -6,8 +6,8 @@ import 'react-id-swiper/src/styles/scss/swiper.scss';
 import './_home.scss';
 
 import Slide from '../../molecules/Slide';
-import Hero from '../../templates/Hero'
-import Skills from '../../templates/Skills';
+import Hero from '../../sections/Hero'
+import Skills from '../../sections/Skills';
 
 export class Home extends React.PureComponent {
 
@@ -19,11 +19,11 @@ export class Home extends React.PureComponent {
 					<meta name="description" content="Feature page of React.js Boilerplate application" />
 				</Helmet>
 				<Swiper {...swiperConfig}>
-					<Slide slideTheme="navy" slideType="section">
-						<Hero />
-					</Slide>
 					<Slide slideTheme="white" slideType="div">
 						<Skills />
+					</Slide>
+					<Slide slideTheme="navy" slideType="section">
+						<Hero />
 					</Slide>
 				</Swiper>
 			</div>

@@ -9,8 +9,7 @@ interface IProps {
   slideType?: string;
 }
 
-const Slide: React.SFC<IProps> = (props) => {
-  //const ComponentType = React.createElement(props.slideType || 'div', props);
+const Slide: React.FC<IProps> = (props) => {
   const slideTheme: string = props.slideTheme ? `slide--${props.slideTheme}` : '';
   const componentClass = classNames(props.className, 'slide', slideTheme);
 

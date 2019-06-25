@@ -1,0 +1,27 @@
+@import "../../../themes/v1/scss/common";
+
+.tags {
+	list-style-type: none;
+	margin: 0;
+	padding: em(12, 16);
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: right;
+
+	&__item {
+		display: block;
+		font-size: em(14, 16);
+		font-weight: 700;
+		color: $white;
+		background: $red;
+		padding: em(4, 14) em(16, 14) em(5, 14);
+		margin-right: em(8, 14);
+		border-radius: em(15, 14);
+		align-self: flex-end;
+
+		&:last-child {
+			margin-right: auto;
+		}
+	}
+}

@@ -8,7 +8,7 @@ interface IProps {
 	tags?: string,
 };
 
-const Tile : React.SFC<IProps> = (props) => {
+const Tile : React.FC<IProps> = (props) => {
 	const colourClass = `tile--${props.tags}`;
 	const componentClass = classNames(props.className, 'tile', colourClass);
 

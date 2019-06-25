@@ -7,7 +7,7 @@ interface IProps {
 	className: string,
 }
 
-export const Filter: React.SFC<IProps> = (props) => {
+export const Filter: React.FC<IProps> = (props) => {
 	const componentClass = classNames(props.className, 'filter');
 	return <ul className={componentClass}>{props.children}</ul>;
 };

@@ -7,21 +7,14 @@ interface IProps {
 }
 
 export class Home extends React.PureComponent<IProps> {
-	constructor(props: IProps) {
-		super(props);
-	}
-
 	render() {
 		const componentClass = classNames(this.props.className, 'hero');
 
 		return (
 			<div className={componentClass}>
 				<div className="hero__inner">
-					<div className="hero__bg">
-
-					</div>
 					<h1 className="hero__heading">Ray Ranola</h1>
-					<p className="hero__text">
+					<p className="hero__text intro">
 						Full stack developer at VMLY&R Sydney.
 						<br />
 					</p>

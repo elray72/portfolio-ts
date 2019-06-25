@@ -8,7 +8,7 @@ interface IProps {
 	className?: string,
 }
 
-const Nav: React.SFC<IProps> = (props) => {
+const Nav: React.FC<IProps> = (props) => {
 	const componentClass = classNames(props.className, 'nav');
 
 	return <nav className={componentClass}>

@@ -18,23 +18,23 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
+	font-size: em(48);
+	margin-bottom: em(16, 48);
+}
+
+h2 {
+	font-size: em(36);
+	margin-bottom: em(16, 36);
+}
+
+h3 {
 	font-size: em(24);
 	margin-bottom: em(16, 24);
 }
 
-h2 {
-	font-size: em(20);
-	margin-bottom: em(16, 22);
-}
-
-h3 {
-	font-size: em(18);
-	margin-bottom: em(16, 20);
-}
-
 h4, h5 {
-	font-size: em(16);
-	margin-bottom: em(16, 18);
+	font-size: em(20);
+	margin-bottom: em(16, 20);
 }
 
 p {
@@ -46,6 +46,15 @@ p {
 		display: block;
 		margin-bottom: em(8);
 		clear: both;
+	}
+
+	&.intro {
+		font-size: em(20);
+		margin: 0 0 em(8, 20) 0;
+
+		br {
+			margin-bottom: em(8, 20);
+		}
 	}
 }
 

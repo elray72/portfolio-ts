@@ -17,17 +17,17 @@
 
 	&__header {
 		text-align: center;
-	}
 
-	&__heading {
-		width: 100%;
-	}
+		&-title {
+			width: 100%;
+		}
 
-	&__text {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-		padding: 0 em(24);
+		&-desc {
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 0 em(24);
+		}
 	}
 
 	&__body {
@@ -38,7 +38,7 @@
 
 	&__swiper {
 		width: 100%;
-		margin: em(24) 0;
+		margin: em(32) 0;
 
 		&-wrapper {
 			position: relative;
@@ -52,6 +52,24 @@
 
 		.slide {
 			padding: 0 em(24);
+		}
+	}
+
+	&__slide {
+		flex-shrink: 0;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		transition-property: transform;
+	}
+
+	&__card {
+
+		&-tags {
+			position: absolute;
+			bottom: em(12);
+			left: em(12);
+			width: 100%;
 		}
 	}
 }
