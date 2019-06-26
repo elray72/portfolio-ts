@@ -33,13 +33,13 @@ const Skills: React.FC<IProps> = (props) => {
 								<p className="skills__card-desc">
 									Great experiences begin with solid semantic HTML and masterful CSS.
 								</p>
-								<Tags className="skills__card-tags" values={["mastery", "10 years"]} />
+								<Tags className="skills__card-tags" values={["10 years", "mastery"]} />
 							</Card>
 						</Slide>
 						<Slide>
 							<Card className="skills__card" title="JavaScript" logo="/static/img/logo/js.png">
 								<p className="skills__card-desc">
-									Highly skilled in plain old JavaScript and ES6.
+									Highly skilled in vanilla JavaScript from ES5 to ES6.
 								</p>
 							</Card>
 						</Slide>

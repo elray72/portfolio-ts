@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import './_header.scss';
 
-import Nav from '../Nav';
 import Hamburger from '../../atoms/Hamburger';
 
-class Header extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			expanded: false,
-		};
-	}
+interface IState {
+	expanded: boolean
+}
+
+class Header extends React.PureComponent<{}, IState> {
+	state = {
+		expanded: false,
+	};
 
 	toggleExpandedState = () => {
 		const prevState = this.state.expanded;
@@ -38,16 +38,19 @@ class Header extends Component {
 		});
 
 		return (
-			<header className={`${headerClass} header--sticky`}>
-				<div className="header__inner">
-					<div className="header__logo" />
-					<div className={headerMenuClass}>
-						<Hamburger onClick={this.handleHamburgerClick} />
-						{this.props.children}
+			<React.Fragment>
+				<header className={`${headerClass} header--sticky`}>
+					<div className="header__inner">
+						<div className="header__logo" />
+						<div className={headerMenuClass}>
+
+							{this.props.children}
+						</div>
 					</div>
-				</div>
-				<div className="header__overlay" onClick={this.handleOverlayClick} />
-			</header>
+					<div className="header__overlay" onClick={this.handleOverlayClick} />
+				</header>
+				<Hamburger onClick={this.handleHamburgerClick} />
+			</React.Fragment>
 		);
 	}
 }
