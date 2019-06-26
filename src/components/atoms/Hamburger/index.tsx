@@ -6,37 +6,28 @@ interface IProps {
 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
-interface IState {
-	expanded: boolean,
-}
+const Hamburger: React.FC<IProps> = (props) => {
 
-class Hamburger extends React.PureComponent<IProps, IState> {
+	const [expanded, setExpanded] = React.useState(false);
 
-	state = {
-		expanded: false
+	const componentClass = classNames({
+		hamburger: true,
+		'hamburger--expanded': expanded,
+	});
+
+	const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+		props.onClick(e);
+		setExpanded(expanded => !expanded);
 	};
 
-	handleOnClick = (e: any) => {
-		const prevState = this.state.expanded;
-		this.props.onClick(e);
-		this.setState({ expanded: !prevState });
-	};
-
-	render() {
-		const componentClass = classNames({
-			hamburger: true,
-			'hamburger--expanded': this.state.expanded,
-		});
-
-		return (
-			<button type="button" className={componentClass} onClick={this.handleOnClick}>
-				<span className="hamburger__bar"/>
-				<span className="hamburger__bar"/>
-				<span className="hamburger__bar"/>
-			</button>
-		);
-	}
-}
+	return (
+		<button type="button" className={componentClass} onClick={handleOnClick}>
+			<span className="hamburger__bar"/>
+			<span className="hamburger__bar"/>
+			<span className="hamburger__bar"/>
+		</button>
+	);
+};
 
 
 export default Hamburger;
