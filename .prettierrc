@@ -3,9 +3,10 @@
   "bracketSpacing": true,
   "jsxSingleQuote": false,
   "printWidth": 120,
-  "quoteProps": "as-needed",
+  "quoteProps": "consistent",
   "semi": true,
   "singleQuote": true,
   "tabWidth": 2,
-  "trailingComma": "es5"
+  "trailingComma": "all",
+  "useTabs": true
 }

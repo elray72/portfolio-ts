@@ -8,6 +8,7 @@ import './_home.scss';
 import Slide from '../../molecules/Slide';
 import Hero from '../../sections/Hero'
 import Skills from '../../sections/Skills';
+import Work from '../../sections/Work';
 
 export class Home extends React.PureComponent {
 
@@ -19,6 +20,9 @@ export class Home extends React.PureComponent {
 					<meta name="description" content="Feature page of React.js Boilerplate application" />
 				</Helmet>
 				<Swiper {...swiperConfig}>
+					<Slide slideTheme="navy" slideType="div">
+						<Work />
+					</Slide>
 					<Slide slideTheme="white" slideType="div">
 						<Skills />
 					</Slide>
