@@ -3,86 +3,59 @@ import MixItUp from 'mixitup';
 import classNames from 'classnames';
 import './_work.scss';
 
-import Filter from '../../molecules/Filter';
-import FilterOption from '../../molecules/FilterOption';
 import Tile from '../../molecules/Tile';
 import Shuffler from '../../organisms/Shuffler';
+import Filter from '../../molecules/Filter';
+import FilterOption from '../../molecules/FilterOption';
 
 interface IProps {
-  className?: string,
+	className?: string;
 }
 
 const Skills: React.FC<IProps> = (props) => {
+	const shufflerRef = React.useRef<HTMLDivElement>(null);
+	const mixItUpRef = React.useRef<typeof MixItUp>(null);
 
-  let shuffler: typeof MixItUp = undefined;
-  const shufflerRef = React.useRef<HTMLDivElement>(null);
-  const initShuffler = () => {
-    if (!shuffler && shufflerRef.current) {
-      shuffler = MixItUp(shufflerRef.current);
-    }
-  };
+	React.useLayoutEffect(() => {
+		mixItUpRef.current = MixItUp(shufflerRef.current);
+	});
 
-  React.useLayoutEffect(() => {
-    initShuffler();
-  }, []);
+	const handleFilterClick = (e: React.MouseEvent<React.ReactElement>) => {
+		const filterValue = (e.target as HTMLInputElement).value;
+		mixItUpRef.current.filter(`[data-tag*="${filterValue}"]`);
+	};
 
-  const handleFilterClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(e.target);
-    shuffler.filter('.mix--green');
-  };
+	const handleAllClick = () => {
+		mixItUpRef.current.filter('.mix');
+	};
 
-  const componentClass = classNames(props.className, 'grid');
+	const componentClass = classNames(props.className, 'grid');
 
-  return (
-    <div className={componentClass}>
-      <div className="grid__inner">
-        <h1>Shuffler</h1>
-
-        <Filter className="grid__filter">
-          <button type="button" onClick={handleFilterClick} value="green">
-            Green
-          </button>
-          <FilterOption name="filter_option" text="Red" value="red" />
-          <FilterOption name="filter_option" text="Green" value="green" />
-          <FilterOption name="filter_option" text="Blue" value="blue" />
-          <FilterOption name="filter_option" text="Yellow" value="yellow" />
-        </Filter>
-
-        <div className="grid__shuffle" ref={shufflerRef} >
-          <div className="grid__item mix">
-            <Tile tags="red" />
-          </div>
-          <div className="grid__item mix mix--green">
-            <Tile tags="green" />
-          </div>
-          <div className="grid__item mix">
-            <Tile tags="blue" />
-          </div>
-          <div className="grid__item mix mix--green">
-            <Tile tags="green" />
-          </div>
-          <div className="grid__item mix">
-            <Tile tags="yellow" />
-          </div>
-          <div className="grid__item mix">
-            <Tile tags="red" />
-          </div>
-          <div className="grid__item mix">
-            <Tile tags="yellow" />
-          </div>
-          <div className="grid__item mix">
-            <Tile tags="blue" />
-          </div>
-          <div className="grid__item mix">
-            <Tile tags="blue" />
-          </div>
-          <div className="grid__item mix mix--green">
-            <Tile tags="green" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className={componentClass}>
+			<div className="grid__inner">
+				<h1>Shuffler</h1>
+				<Filter className="grid__filter">
+					<FilterOption value="green" onClick={handleFilterClick} />
+					<FilterOption value="red" onClick={handleFilterClick} />
+					<FilterOption value="blue" onClick={handleFilterClick} />
+					<FilterOption value="yellow" onClick={handleFilterClick} />
+					<FilterOption value="all" onClick={handleAllClick} />
+				</Filter>
+				<Shuffler shufflerRef={shufflerRef}>
+					<Tile tags="green, red" />
+					<Tile tags="green" />
+					<Tile tags="blue" />
+					<Tile tags="green" />
+					<Tile tags="yellow" />
+					<Tile tags="red" />
+					<Tile tags="green" />
+					<Tile tags="blue" />
+					<Tile tags="yellow" />
+				</Shuffler>
+			</div>
+		</div>
+	);
 };
 
 export default Skills;

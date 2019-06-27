@@ -1,64 +1,21 @@
 import * as React from 'react';
-import classNames from 'classnames';
 import './_shuffler.scss';
-import Tile from '../../molecules/Tile';
 
 interface IProps {
-	//shuffler: typeof MixItUp,
-	ref: any
-	// children: any;
+	shufflerRef: any,
+	children: React.ReactElement[];
 }
 
 const Shuffler: React.FC<IProps> = (props) => {
-
-	//let shuffler: typeof MixItUp = undefined;
-	// const shufflerRef = React.useRef<HTMLDivElement>(null);
-	// const initShuffler = () => {
-	// 	console.log(shufflerRef);
-	// 	if (!shufflerRef.current) {
-	// 		props.shuffler = MixItUp(shufflerRef.current);
-	// 	}
-	// };
-	//
-	// React.useLayoutEffect(() => {
-	// 	initShuffler();
-	// }, []);
-
-	// const shufflerRef = React.useRef<HTMLDivElement>(null);
-
+	let k = 1;
 	return (
-		<div className="grid__shuffle" ref={props.ref}>
-			<div className="grid__item mix">
-				<Tile tags="red" />
-			</div>
-			<div className="grid__item mix mix--green">
-				<Tile tags="green" />
-			</div>
-			<div className="grid__item mix">
-				<Tile tags="blue" />
-			</div>
-			<div className="grid__item mix mix--green">
-				<Tile tags="green" />
-			</div>
-			<div className="grid__item mix">
-				<Tile tags="yellow" />
-			</div>
-			<div className="grid__item mix">
-				<Tile tags="red" />
-			</div>
-			<div className="grid__item mix">
-				<Tile tags="yellow" />
-			</div>
-			<div className="grid__item mix">
-				<Tile tags="blue" />
-			</div>
-			<div className="grid__item mix">
-				<Tile tags="blue" />
-			</div>
-			<div className="grid__item mix mix--green">
-				<Tile tags="green" />
-			</div>
-		</div>
+		<ul className="grid__shuffle" ref={props.shufflerRef}>
+			{(props.children || []).map((n: React.ReactElement) => (
+				<li className={`grid__item mix`} data-tag={n.props.tags} key={`grid_item_${k++}`}>
+					{n}
+				</li>
+			))}
+		</ul>
 	);
 };
 
