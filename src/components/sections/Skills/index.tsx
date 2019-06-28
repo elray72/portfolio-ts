@@ -46,9 +46,14 @@ const Skills: React.FC<IProps> = (props) => {
 						<Slide>
 							<Card className="skills__card" title="React" logo="/static/img/logo/react.png">
 								<p className="skills__card-desc">
-									My framework of choice - I have been using React for 2 years.
+									My framework of choice. I use typescript and utilize
+									style-components, jest/enzyme and redux.
+									<Tags className="skills__card-tags" values={["2 years", "intermediate"]} />
 								</p>
 							</Card>
+						</Slide>
+						<Slide>
+							<Card title="TypeScript" logo="/static/img/logo/ts.png" />
 						</Slide>
 						<Slide>
 							<Card title="WebPack" logo="/static/img/logo/webpack.png" />
@@ -57,19 +62,20 @@ const Skills: React.FC<IProps> = (props) => {
 							<Card title=".NET / C#" logo="/static/img/logo/csharp.png" />
 						</Slide>
 						<Slide>
-							<Card title="Angular" logo="/static/img/logo/angular.png" />
+							<Card className="skills__card" title="React" logo="/static/img/logo/react.png">
+								<p className="skills__card-desc">
+									My framework of choice - I have been using React for 2 years.
+									<Tags className="skills__card-tags" values={["2 years", "intermediate"]} />
+								</p>
+							</Card>
 						</Slide>
 						<Slide>
-							<Card title="VueJs" logo="/static/img/logo/vue.png" />
-						</Slide>
-						<Slide>
-							<Card title="TypeScript" logo="/static/img/logo/ts.png" />
-						</Slide>
-						<Slide>
-							<Card title="HTML" logo="/static/img/logo/html5.png" />
-						</Slide>
-						<Slide>
-							<Card title="SCSS" logo="/static/img/logo/sass.png" />
+							<Card className="skills__card" title="SCSS" logo="/static/img/logo/sass.png">
+								<p className="skills__card-desc">
+									My framework of choice - I have been using React for 2 years.
+									<Tags className="skills__card-tags" values={["2 years", "intermediate"]} />
+								</p>
+							</Card>
 						</Slide>
 					</Swiper>
 				</div>
