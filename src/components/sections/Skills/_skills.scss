@@ -12,7 +12,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding: em(60) 0;
+		padding: em(80) 0 em(40);
 	}
 
 	&__header {
@@ -20,6 +20,8 @@
 
 		&-title {
 			width: 100%;
+			font-size: em(36);
+			margin-bottom: em(24, 36);
 		}
 
 		&-desc {
@@ -27,6 +29,8 @@
 			margin-left: auto;
 			margin-right: auto;
 			padding: 0 em(24);
+			font-size: em(16);
+			margin-bottom: em(16);
 		}
 	}
 

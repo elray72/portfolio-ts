@@ -7,7 +7,7 @@ import './_skills.scss';
 
 import Slide from '../../molecules/Slide';
 import Card from '../../molecules/Card';
-import Tags from '../../molecules/Tags';
+import Tags from '../../organisms/Tags';
 
 interface IProps {
 	className?: string,
@@ -48,8 +48,8 @@ const Skills: React.FC<IProps> = (props) => {
 								<p className="skills__card-desc">
 									My framework of choice. I use typescript and utilize
 									style-components, jest/enzyme and redux.
-									<Tags className="skills__card-tags" values={["2 years", "intermediate"]} />
 								</p>
+								<Tags className="skills__card-tags" values={["2 years", "intermediate"]} />
 							</Card>
 						</Slide>
 						<Slide>
@@ -65,16 +65,16 @@ const Skills: React.FC<IProps> = (props) => {
 							<Card className="skills__card" title="React" logo="/static/img/logo/react.png">
 								<p className="skills__card-desc">
 									My framework of choice - I have been using React for 2 years.
-									<Tags className="skills__card-tags" values={["2 years", "intermediate"]} />
 								</p>
+								<Tags className="skills__card-tags" values={["2 years", "intermediate"]} />
 							</Card>
 						</Slide>
 						<Slide>
 							<Card className="skills__card" title="SCSS" logo="/static/img/logo/sass.png">
 								<p className="skills__card-desc">
 									My framework of choice - I have been using React for 2 years.
-									<Tags className="skills__card-tags" values={["2 years", "intermediate"]} />
 								</p>
+								<Tags className="skills__card-tags" values={["2 years", "intermediate"]} />
 							</Card>
 						</Slide>
 					</Swiper>

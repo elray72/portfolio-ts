@@ -1,57 +1,44 @@
 import * as React from 'react';
-import MixItUp from 'mixitup';
 import classNames from 'classnames';
 import './_work.scss';
 
 import Tile from '../../molecules/Tile';
 import Shuffler from '../../organisms/Shuffler';
-import Filter from '../../molecules/Filter';
-import FilterOption from '../../molecules/FilterOption';
 
 interface IProps {
 	className?: string;
 }
 
 const Skills: React.FC<IProps> = (props) => {
-	const shufflerRef = React.useRef<HTMLDivElement>(null);
-	const mixItUpRef = React.useRef<typeof MixItUp>(null);
 
-	React.useLayoutEffect(() => {
-		mixItUpRef.current = MixItUp(shufflerRef.current);
-	});
 
-	const handleFilterClick = (e: React.MouseEvent<React.ReactElement>) => {
-		const filterValue = (e.target as HTMLInputElement).value;
-		mixItUpRef.current.filter(`[data-tag*="${filterValue}"]`);
-	};
-
-	const handleAllClick = () => {
-		mixItUpRef.current.filter('.mix');
-	};
-
-	const componentClass = classNames(props.className, 'grid');
+	const componentClass = classNames(props.className, 'work');
 
 	return (
 		<div className={componentClass}>
-			<div className="grid__inner">
-				<h1>Shuffler</h1>
-				<Filter className="grid__filter">
-					<FilterOption value="green" onClick={handleFilterClick} />
-					<FilterOption value="red" onClick={handleFilterClick} />
-					<FilterOption value="blue" onClick={handleFilterClick} />
-					<FilterOption value="yellow" onClick={handleFilterClick} />
-					<FilterOption value="all" onClick={handleAllClick} />
-				</Filter>
-				<Shuffler shufflerRef={shufflerRef}>
-					<Tile tags="green, red" />
-					<Tile tags="green" />
-					<Tile tags="blue" />
-					<Tile tags="green" />
-					<Tile tags="yellow" />
-					<Tile tags="red" />
-					<Tile tags="green" />
-					<Tile tags="blue" />
-					<Tile tags="yellow" />
+			<div className="work__inner">
+				<div className="work__header">
+					<h2 className="work__header-title">Selected works</h2>
+					<p className="work__header-desc">
+						Please explore some of my favourite projects categorized by tech.
+					</p>
+				</div>
+				<Shuffler className="work__shuffler">
+					<Tile tags="vanill|react">
+						Delos
+					</Tile>
+					<Tile tags="js|react|.net">
+						Hyundai
+					</Tile>
+					<Tile tags="js|jquery|.net">
+						Charter Hall
+					</Tile>
+					<Tile tags="js">
+						Furphy
+					</Tile>
+					<Tile tags="vanilla">
+						StarTrack
+					</Tile>
 				</Shuffler>
 			</div>
 		</div>

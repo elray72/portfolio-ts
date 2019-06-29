@@ -13,7 +13,7 @@ const Tags: React.FC<IProps> = (props) => {
   return (
     <ul className={componentClass}>
       {(props.values || []).map((n: string) => (
-        <li className="tags__item" key={`${n}`}>{n}</li>
+        <li className="tags__item" key={`tag_${n}`}>{n}</li>
       ))}
     </ul>
   );
