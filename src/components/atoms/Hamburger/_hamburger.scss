@@ -1,10 +1,12 @@
 @import "../../../themes/v1/scss/common";
 
+$hamburger-size: 60px;
+
 .hamburger {
 	display: block;
-	height: em(60);
-	width: em(60);
-	margin: 0;
+	height: em($hamburger-size);
+	width: em($hamburger-size);
+	margin: em(($header-height-m - $hamburger-size)/2);
 	padding: 0;
 	border: 0;
 	cursor: pointer;
@@ -25,10 +27,11 @@
 
 	&__bar {
 		width: em(30);
-		height: 4px;
+		height: em(4);
 		background-color: $black;
+		border-radius: em(2);
 		display: block;
-		margin: 4px auto;
+		margin: em(4) auto;
 		transition: all 0.25s ease-in-out;
 	}
 
@@ -40,15 +43,15 @@
 			&__bar{
 
 				&:nth-child(1) {
-					transform: translateY(4px) translateX(4px) rotate(45deg) scaleX(0.5);
+					transform: translateY(em(4)) translateX(em(4)) rotate(45deg) scaleX(0.5);
 				}
 
 				&:nth-child(2) {
-					transform: translateY(1px) rotate(90deg) scaleX(0.6);
+					transform: translateY(em(1)) rotate(90deg) scaleX(0.6);
 				}
 
 				&:nth-child(3) {
-					transform: translateX(-4px) translateY(-12px) rotate(-50deg) scaleX(0.5);
+					transform: translateX(em(-4)) translateY(em(-12)) rotate(-50deg) scaleX(0.5);
 				}
 			}
 		}
