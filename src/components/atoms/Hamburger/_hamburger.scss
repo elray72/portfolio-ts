@@ -7,6 +7,13 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
+	cursor: pointer;
+	transition: transform 0.25s ease-in-out;
+	background: transparent;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 3;
 
 	&:focus {
 		outline: 0;
@@ -14,5 +21,36 @@
 
 	&__label {
 		display: none;
+	}
+
+	&__bar {
+		width: em(30);
+		height: 4px;
+		background-color: $black;
+		display: block;
+		margin: 4px auto;
+		transition: all 0.25s ease-in-out;
+	}
+
+	&--expanded {
+		transform: rotate(-90deg);
+
+		.hamburger {
+
+			&__bar{
+
+				&:nth-child(1) {
+					transform: translateY(4px) translateX(4px) rotate(45deg) scaleX(0.5);
+				}
+
+				&:nth-child(2) {
+					transform: translateY(1px) rotate(90deg) scaleX(0.6);
+				}
+
+				&:nth-child(3) {
+					transform: translateX(-4px) translateY(-12px) rotate(-50deg) scaleX(0.5);
+				}
+			}
+		}
 	}
 }

@@ -9,7 +9,7 @@ interface IProps {
 
 export const Filter: React.FC<IProps> = (props) => {
 	const componentClass = classNames(props.className, 'filter');
-	return <ul className={componentClass}>{props.children}</ul>;
+	return <div className={componentClass}>{props.children}</div>;
 };
 
 export default Filter;
