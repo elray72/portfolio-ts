@@ -18,7 +18,7 @@
 			width: 100%;
 			background: red;
 			position: relative;
-			padding-bottom: 80%;
+			padding-bottom: 66.66%;
 			@include media-breakpoint-up(tablet) {
 
 			}
@@ -34,9 +34,21 @@
 	}
 
 	&__filter {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		&-item {
+			font-size: em(14);
+			background-color: $white;
+			display: block;
+			border: none;
+			box-shadow: none;
 
+			&:first-child {
+				border-top-left-radius: em(4, 14);
+				border-bottom-left-radius: em(4, 14);
+			}
 		}
 	}
 

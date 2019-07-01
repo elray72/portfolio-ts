@@ -10,8 +10,6 @@ interface IProps {
 }
 
 const Skills: React.FC<IProps> = (props) => {
-
-
 	const componentClass = classNames(props.className, 'work');
 
 	return (
@@ -24,20 +22,23 @@ const Skills: React.FC<IProps> = (props) => {
 					</p>
 				</div>
 				<Shuffler className="work__shuffler">
-					<Tile tags="vanill|react">
+					<Tile tags="Vanilla|React">
 						Delos
 					</Tile>
-					<Tile tags="js|react|.net">
-						Hyundai
+					<Tile tags="Vanilla|React|.NET">
+						i30n
 					</Tile>
-					<Tile tags="js|jquery|.net">
+					<Tile tags="jQuery|.NET">
 						Charter Hall
 					</Tile>
-					<Tile tags="js">
+					<Tile tags="Vanilla|React">
 						Furphy
 					</Tile>
-					<Tile tags="vanilla">
+					<Tile tags="Vanilla">
 						StarTrack
+					</Tile>
+					<Tile tags="Vanilla">
+						Design my Hyundai
 					</Tile>
 				</Shuffler>
 			</div>

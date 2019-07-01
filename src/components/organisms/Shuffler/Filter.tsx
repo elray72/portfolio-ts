@@ -19,7 +19,8 @@ export const Filter: React.FC<IProps> = (props) => {
 	return (
 		<div className="shuffler__filter">
 			{(options || []).map((option: string) => (
-				<button typeof="radio"
+				<button className="shuffler__filter-item"
+								typeof="radio"
 								value={option}
 								key={`shuffler_filter_${option}`}
 								onClick={props.handleFilterClick}>
