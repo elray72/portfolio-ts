@@ -4,12 +4,11 @@ import MixItUp from 'mixitup';
 interface IProps {
 	items: React.ReactElement[];
 	mixitup: typeof MixItUp;
-	handleAllClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-	handleFilterClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	handleAllClick: (event: React.MouseEvent<HTMLInputElement>) => void;
+	handleFilterClick: (event: React.MouseEvent<HTMLInputElement>) => void;
 }
 
 export const Filter: React.FC<IProps> = (props) => {
-
 	const options = props.items
 		.map((n: React.ReactElement) => n.props.tags)
 		.join()
@@ -19,15 +18,22 @@ export const Filter: React.FC<IProps> = (props) => {
 	return (
 		<div className="shuffler__filter">
 			{(options || []).map((option: string) => (
-				<button className="shuffler__filter-item"
-								typeof="radio"
-								value={option}
-								key={`shuffler_filter_${option}`}
-								onClick={props.handleFilterClick}>
-					{option}
-				</button>
+				<label>
+					<input
+						type="radio"
+						className="shuffler__filter-item"
+						value={option}
+						key={`shuffler_filter_${option}`}
+						onClick={props.handleFilterClick}
+					/>
+				</label>
 			))}
-			<button onClick={props.handleAllClick}>All</button>
+			<label>
+				<input
+					type="radio"
+					className="shuffler__filter-item"
+					onClick={props.handleAllClick}/>
+			</label>
 		</div>
 	);
 };

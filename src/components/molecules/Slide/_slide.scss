@@ -1,13 +1,23 @@
 @import "../../../themes/v1/scss/common";
 
+@mixin slideTheme($name, $background, $color) {
+	&--#{$name} {
+		background: $background;
+		color: $color;
+	}
+}
+
 .slide {
 
 	&__inner {
 
 	}
 
-	&--primary {
-		background: $primary;
-		color: $white;
-	}
+	@include slideTheme('white', $white, $black);
+	@include slideTheme('black', $black, $white);
+	@include slideTheme('light', $grey-pale, $black);
+	@include slideTheme('dark', $grey-dark, $white);
+	@include slideTheme('primary', $primary, $white);
+	@include slideTheme('secondary', $secondary, $white);
+	@include slideTheme('tertiary', $tertiary, $black);
 }

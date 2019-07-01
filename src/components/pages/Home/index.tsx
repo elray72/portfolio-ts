@@ -20,13 +20,13 @@ export class Home extends React.PureComponent {
 					<meta name="description" content="Feature page of React.js Boilerplate application" />
 				</Helmet>
 				<Swiper {...swiperConfig}>
-					<Slide slideTheme="navy" slideType="div">
+					<Slide slideTheme="white" slideType="div">
 						<Work />
 					</Slide>
-					<Slide slideTheme="white" slideType="div">
+					<Slide slideTheme="light" slideType="div">
 						<Skills />
 					</Slide>
-					<Slide slideTheme="navy" slideType="section">
+					<Slide slideTheme="white" slideType="section">
 						<Hero />
 					</Slide>
 				</Swiper>

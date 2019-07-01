@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import MixItUp from "mixitup";
+import mixitupConfig from './mixitupConfig.json';
 import './_shuffler.scss';
 import Filter from './Filter';
 
@@ -15,11 +16,11 @@ const Shuffler: React.FC<IProps> = (props) => {
 	const mixitupRef = React.useRef<typeof MixItUp>(null);
 
 	React.useEffect(() => {
-		mixitupRef.current = MixItUp(shufflerRef.current);
+		mixitupRef.current = MixItUp(shufflerRef.current, mixitupConfig);
 	});
 
-	const handleFilterClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-		const filterValue = (e.target as HTMLButtonElement).value;
+	const handleFilterClick = (e: React.MouseEvent<HTMLInputElement>) => {
+		const filterValue = (e.target as HTMLInputElement).value;
 		mixitupRef.current.filter(`[data-tag*="${filterValue}"]`);
 	};
 
@@ -38,7 +39,7 @@ const Shuffler: React.FC<IProps> = (props) => {
 							handleAllClick={handleAllClick} />
 			<ul className="shuffler__list" ref={shufflerRef}>
 				{(props.children || []).map((n: React.ReactElement) => (
-					<li className={`shuffler__list-item mix`} data-tag={n.props.tags} key={`_item_${k++}`}>
+					<li className={`shuffler__list-item`} data-tag={n.props.tags} key={`_item_${k++}`}>
 						{n}
 					</li>
 				))}

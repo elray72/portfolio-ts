@@ -1,5 +1,7 @@
 @import "../../../themes/v1/scss/common";
 
+$filter-font-size: 16px;
+
 .shuffler {
 
 	&__list {
@@ -39,15 +41,32 @@
 		justify-content: center;
 
 		&-item {
-			font-size: em(14);
-			background-color: $white;
+			font-size: em($filter-font-size);
+			font-weight: bold;
+			background-color: $grey;
+			padding: em(10);
+			color: $white;
 			display: block;
 			border: none;
 			box-shadow: none;
+			&:focus {
+				outline: none;
+			}
+
+			&:checked {
+				background: $secondary;
+			}
 
 			&:first-child {
-				border-top-left-radius: em(4, 14);
-				border-bottom-left-radius: em(4, 14);
+				padding-left: em(16);
+				border-top-left-radius: em(4, $filter-font-size);
+				border-bottom-left-radius: em(4, $filter-font-size);
+			}
+
+			&:last-child {
+				padding-right: em(16);
+				border-top-right-radius: em(4, $filter-font-size);
+				border-bottom-right-radius: em(4, $filter-font-size);
 			}
 		}
 	}
