@@ -1,8 +1,0 @@
-{
-  "direction": "horizontal",
-  "centeredSlides": false,
-  "containerModifierClass": "skills__swiper--",
-  "containerClass": "skills__swiper",
-  "wrapperClass": "skills__swiper-wrapper",
-  "slideClass": "skills__slide"
-}

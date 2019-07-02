@@ -18,26 +18,26 @@ const Skills: React.FC<IProps> = (props) => {
 				<div className="work__header">
 					<h2 className="work__header-title">Selected works</h2>
 					<p className="work__header-desc">
-						Please explore some of my favourite projects categorized by tech.
+						Some of my favourite projects categorized by tech.
 					</p>
 				</div>
-				<Shuffler className="work__shuffler">
-					<Tile tags="Vanilla|React">
+				<Shuffler className="work__shuffler" name="work_shuffler">
+					<Tile tags="JS|React">
 						Delos
 					</Tile>
-					<Tile tags="Vanilla|React|.NET">
+					<Tile tags="JS|React|.NET">
 						i30n
 					</Tile>
 					<Tile tags="jQuery|.NET">
 						Charter Hall
 					</Tile>
-					<Tile tags="Vanilla|React">
+					<Tile tags="JS|React">
 						Furphy
 					</Tile>
-					<Tile tags="Vanilla">
+					<Tile tags="JS">
 						StarTrack
 					</Tile>
-					<Tile tags="Vanilla">
+					<Tile tags="JS|React">
 						Design my Hyundai
 					</Tile>
 				</Shuffler>

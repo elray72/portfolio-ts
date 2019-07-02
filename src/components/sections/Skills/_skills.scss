@@ -20,7 +20,7 @@
 		&-title {
 			width: 100%;
 			font-size: em(36);
-			margin-bottom: em(24, 36);
+			margin-bottom: em(16, 36);
 		}
 
 		&-desc {
@@ -67,6 +67,19 @@
 	}
 
 	&__card {
+
+		&-desc {
+
+			a {
+				color: $tertiary;
+				text-decoration: none;
+				transition: 0.25s ease-in-out;
+				border-bottom: em(1) solid transparent;
+				&:hover {
+					border-bottom: em(1) solid $tertiary;
+				}
+			}
+		}
 
 		&-tags {
 			position: absolute;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Swiper from 'react-id-swiper';
-import swiperConfig from './swiperConfig.json';
+import swiperConfig from './swiperConfig';
 import 'react-id-swiper/src/styles/scss/swiper.scss';
 import './_home.scss';
 

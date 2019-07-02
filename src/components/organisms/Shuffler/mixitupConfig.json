@@ -1,9 +1,0 @@
-{
-  "animation": {
-    "effectsIn": "fade translateY(-100%)",
-    "clampHeight": true
-  },
-  "selectors": {
-    "target": ".shuffler__list-item"
-  }
-}

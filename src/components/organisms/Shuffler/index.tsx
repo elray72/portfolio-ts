@@ -1,17 +1,17 @@
 import React from 'react';
 import classNames from 'classnames';
-import MixItUp from "mixitup";
-import mixitupConfig from './mixitupConfig.json';
+import MixItUp from 'mixitup';
+import mixitupConfig from './mixitupConfig';
 import './_shuffler.scss';
 import Filter from './Filter';
 
 interface IProps {
 	children: React.ReactElement[];
-	className?: string,
+	className?: string;
+	name: string;
 }
 
 const Shuffler: React.FC<IProps> = (props) => {
-
 	const shufflerRef = React.useRef<HTMLUListElement>(null);
 	const mixitupRef = React.useRef<typeof MixItUp>(null);
 
@@ -25,7 +25,7 @@ const Shuffler: React.FC<IProps> = (props) => {
 	};
 
 	const handleAllClick = () => {
-		mixitupRef.current.filter('.mix');
+		mixitupRef.current.filter('.shuffler__list-item');
 	};
 
 	const componentClass = classNames(props.className);
@@ -33,13 +33,16 @@ const Shuffler: React.FC<IProps> = (props) => {
 	let k = 1;
 	return (
 		<div className={componentClass}>
-			<Filter items={props.children}
-							mixitup={mixitupRef.current}
-							handleFilterClick={handleFilterClick}
-							handleAllClick={handleAllClick} />
+			<Filter
+				items={props.children}
+				mixitup={mixitupRef.current}
+				name={props.name}
+				handleFilterClick={handleFilterClick}
+				handleAllClick={handleAllClick}
+			/>
 			<ul className="shuffler__list" ref={shufflerRef}>
 				{(props.children || []).map((n: React.ReactElement) => (
-					<li className={`shuffler__list-item`} data-tag={n.props.tags} key={`_item_${k++}`}>
+					<li className={`shuffler__list-item`} data-tag={n.props.tags} key={`${props.name}_item_${k++}`}>
 						{n}
 					</li>
 				))}

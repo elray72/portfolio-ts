@@ -1,5 +1,7 @@
 @import "../../../themes/v1/scss/common";
 
+$tag-font-size: 14px;
+
 .tags {
 	list-style-type: none;
 	margin: 0;
@@ -8,17 +10,18 @@
 	flex-direction: row;
 	align-items: flex-end;
 	justify-content: right;
+	flex-wrap: wrap;
 
 	&__item {
 		display: block;
-		font-size: em(14, 16);
+		font-size: em($tag-font-size, 16);
 		font-weight: 700;
 		color: $white;
 		background: $red;
-		height: em(30, 14);
-		padding: em(5, 14) em(16, 14) em(5, 14);
-		margin-right: em(8, 14);
-		border-radius: em(15, 14);
+		height: em(31, $tag-font-size);
+		padding: em(5, $tag-font-size) em(16, $tag-font-size) em(6, $tag-font-size);
+		margin:  em(8, $tag-font-size)  em(8, $tag-font-size) 0 0;
+		border-radius: em(16, $tag-font-size);
 		align-self: flex-end;
 
 		&:last-child {
