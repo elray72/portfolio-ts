@@ -28,7 +28,7 @@ const Shuffler: React.FC<IProps> = (props) => {
 		mixitupRef.current.filter('.shuffler__list-item');
 	};
 
-	const componentClass = classNames(props.className);
+	const componentClass = classNames(props.className, 'shuffler');
 
 	let k = 1;
 	return (
