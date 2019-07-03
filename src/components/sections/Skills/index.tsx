@@ -52,15 +52,15 @@ const Skills: React.FC<IProps> = (props) => {
 							<Card className="skills__card" title="TypeScript" logo="/static/img/logo/ts.png">
 								<p className="skills__card-desc">
 									I've begun rewriting my projects from JS to TS. Some GitHub links -
-									<a href="https://github.com/elray72/portfolio-ts" target="_blank">
+									<a href="https://github.com/elray72/portfolio-ts" target="_blank" rel="noopener noreferrer">
 										Portfolio
 									</a>
 									,&nbsp;
-									<a href="https://github.com/elray72/delos" target="_blank">
+									<a href="https://github.com/elray72/delos" target="_blank" rel="noopener noreferrer">
 										Delos
 									</a>
 									,&nbsp;
-									<a href="https://github.com/elray72/hyundai" target="_blank">
+									<a href="https://github.com/elray72/hyundai" target="_blank" rel="noopener noreferrer">
 										Hyundai
 									</a>
 									.
@@ -92,15 +92,15 @@ const Skills: React.FC<IProps> = (props) => {
 							<Card className="skills__card" title="Umbraco" logo="/static/img/logo/umbraco.png">
 								<p className="skills__card-desc">
 									My favourite .NET CMS, I've built numerous sites for clients like&nbsp;
-									<a href="http://www.arn.com.au/" target="_blank">
+									<a href="http://www.arn.com.au/" target="_blank" rel="noopener noreferrer">
 										ARN
 									</a>
 									,&nbsp;
-									<a href="http://www.duluxgroup.com.au/" target="_blank">
+									<a href="http://www.duluxgroup.com.au/" target="_blank" rel="noopener noreferrer">
 										Dulux Group
 									</a>
-									, and &nbsp;
-									<a href="https://corporate.hoyts.com.au/" target="_blank">
+									, and&nbsp;
+									<a href="https://corporate.hoyts.com.au/" target="_blank" rel="noopener noreferrer">
 										Hoyts Group
 									</a>
 									.

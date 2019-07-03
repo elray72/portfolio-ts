@@ -9,7 +9,8 @@ $filter-font-size: 16px;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr;
 		grid-gap: em(8);
-		padding: em(32) em(8) em(8);
+		margin: em(24) 0 0;
+		padding: em(8);
 		position: relative;
 		overflow: hidden;
 		list-style-type: none;
@@ -21,6 +22,7 @@ $filter-font-size: 16px;
 			background: red;
 			position: relative;
 			padding-bottom: 66.66%;
+			will-change: transform;
 			@include media-breakpoint-up(tablet) {
 
 			}
@@ -42,11 +44,12 @@ $filter-font-size: 16px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		position: relative;
 
 		&-item {
 			font-size: em($filter-font-size);
-			font-weight: bold;
-			color: $white;
+			font-weight: 600;
+			color: $black;
 			display: block;
 			border: none;
 			box-shadow: none;
@@ -58,32 +61,31 @@ $filter-font-size: 16px;
 
 			> span {
 				display: block;
-				padding: em(8) em(12);
-				background-color: $grey;
-				transition: 0.25s ease-in-out;
-			}
-			&:first-child {
-				> span {
-					border-top-left-radius: em(4, $filter-font-size);
-					border-bottom-left-radius: em(4, $filter-font-size);
-					padding-left: em(14);
-				}
-			}
-			&:last-child {
-				> span {
-					border-top-right-radius: em(4, $filter-font-size);
-					border-bottom-right-radius: em(4, $filter-font-size);
-					padding-right: em(14);
-				}
+				padding: 0;
+				margin: em(8) em(16);
+				transition: color 0.25s ease-in-out;
 			}
 
 			> input[type="radio"] {
 				display: none;
 
 				&:checked + span {
-					background: $red;
+					color: $tertiary;
 				}
 			}
+		}
+
+		&-marker {
+			display: block;
+			height: em(3);
+			width: em(1);
+			transition: transform 0.25s timing(ease-out-back);
+			transform: translateX(0px) scaleX(0);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: $tertiary;
+			will-change: transform;
 		}
 	}
 
