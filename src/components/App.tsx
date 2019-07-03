@@ -21,7 +21,7 @@ const App: React.FC = () => {
           <Link to="/" className="nav__link" title="Home">
             Home
           </Link>
-          <Link to="/about" className="nav__link" title="About">
+          <Link to="/test" className="nav__link" title="About">
             About
           </Link>
         </Nav>
@@ -29,7 +29,7 @@ const App: React.FC = () => {
       <main className="main">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={Test} />
+          <Route exact path="/test" component={Test} />
         </Switch>
       </main>
     </React.Fragment>
