@@ -26,4 +26,4 @@ packages/api/etc/
 
 /dist
 /build
-/deploy.js
+/.env
