@@ -10,20 +10,40 @@ interface IProps {
 }
 
 const TileSide : React.FC<IProps> = (props) => {
-
 	const [flipped, setFlipped] = React.useState(false);
 
 	const isFlippable = () => {
 		const isTileSide = () => {
+
+			console.log((props.children as React.ReactElement[]).find((n: any) => {
+				const {name} = n.type;
+				return name === 'TileSide'
+			}));
+
 			return typeof (props.children as React.ReactElement[]).find((n: any) => {
 				const {name} = n.type;
 				return name === 'TileSide'
 			}) === 'object';
 		};
+
+		console.log(Array.isArray(props.children));
+
 		return Array.isArray(props.children) && isTileSide();
 	};
 
+	React.useEffect(() => {
+
+
+	});
+
+
+
+
+
+	console.log('isFlippable:', isFlippable());
+
 	const handleOnClick = () => {
+		console.log('handleOnClick');
 		if (isFlippable()) {
 			setFlipped((flipped) => !flipped);
 		}
