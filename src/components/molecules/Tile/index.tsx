@@ -4,47 +4,16 @@ import './_tile.scss';
 
 interface IProps {
 	className?: string,
-	clickable?: boolean,
+	flip?: boolean,
 	children?: React.ReactNode | React.ReactElement[],
 	tags?: string | string[],
 }
 
-const TileSide : React.FC<IProps> = (props) => {
-	const [flipped, setFlipped] = React.useState(false);
-
-	const isFlippable = () => {
-		const isTileSide = () => {
-
-			console.log((props.children as React.ReactElement[]).find((n: any) => {
-				const {name} = n.type;
-				return name === 'TileSide'
-			}));
-
-			return typeof (props.children as React.ReactElement[]).find((n: any) => {
-				const {name} = n.type;
-				return name === 'TileSide'
-			}) === 'object';
-		};
-
-		console.log(Array.isArray(props.children));
-
-		return Array.isArray(props.children) && isTileSide();
-	};
-
-	React.useEffect(() => {
-
-
-	});
-
-
-
-
-
-	console.log('isFlippable:', isFlippable());
+const Tile : React.FC<IProps> = (props) => {
+	const [flipped, setFlipped] = React.useState(props.flip);
 
 	const handleOnClick = () => {
-		console.log('handleOnClick');
-		if (isFlippable()) {
+		if (props.flip) {
 			setFlipped((flipped) => !flipped);
 		}
 	};
@@ -52,7 +21,7 @@ const TileSide : React.FC<IProps> = (props) => {
 	const componentClass = classNames(
 		props.className,
 		'tile',
-		{'tile--flippable': isFlippable()},
+		{'tile--flip': props.flip},
 		{'tile--flipped': flipped}
 	);
 
@@ -65,4 +34,4 @@ const TileSide : React.FC<IProps> = (props) => {
 	);
 };
 
-export default TileSide;
+export default Tile;
