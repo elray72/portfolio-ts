@@ -27,3 +27,4 @@ packages/api/etc/
 /dist
 /build
 /.env
+/public/web.config
