@@ -23,7 +23,7 @@ const Skills: React.FC<IProps> = (props) => {
 					</p>
 				</div>
 				<Shuffler className="work__shuffler" name="work_shuffler">
-					<Tile tags="JS|React">
+					<Tile tags="JS|React" flip={true}>
 						<TileSide side="front">
 							React
 						</TileSide>
