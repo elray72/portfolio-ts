@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import './_work.scss';
 
 import Tile from '../../molecules/Tile';
+import TileSide from '../../molecules/Tile/TileSide';
 import Shuffler from '../../organisms/Shuffler';
 
 interface IProps {
@@ -15,18 +16,25 @@ const Skills: React.FC<IProps> = (props) => {
 	return (
 		<div className={componentClass}>
 			<div className="work__inner">
+				<h2 className="work__header-title">Selected works</h2>
 				<div className="work__header">
-					<h2 className="work__header-title">Selected works</h2>
 					<p className="work__header-desc">
 						Some of my favourite projects categorized by tech.
 					</p>
 				</div>
 				<Shuffler className="work__shuffler" name="work_shuffler">
 					<Tile tags="JS|React">
-						Delos
+						<TileSide side="front">
+							React
+						</TileSide>
+						<TileSide side="back">
+							React other
+						</TileSide>
 					</Tile>
 					<Tile tags="JS|React|.NET">
-						i30n
+						<div>
+							i30n
+						</div>
 					</Tile>
 					<Tile tags="jQuery|.NET">
 						Charter Hall

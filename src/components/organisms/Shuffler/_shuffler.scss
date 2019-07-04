@@ -19,7 +19,6 @@ $filter-font-size: 16px;
 			display: flex;
 			flex-wrap: wrap;
 			width: 100%;
-			background: red;
 			position: relative;
 			padding-bottom: 66.66%;
 			will-change: transform;
@@ -45,6 +44,7 @@ $filter-font-size: 16px;
 		align-items: center;
 		justify-content: center;
 		position: relative;
+		flex-wrap: wrap;
 
 		&-item {
 			font-size: em($filter-font-size);
@@ -55,6 +55,7 @@ $filter-font-size: 16px;
 			box-shadow: none;
 			transition: 0.25s ease-in-out;
 			cursor: pointer;
+			flex-shrink: 0;
 			&:focus {
 				outline: none;
 			}
@@ -63,7 +64,12 @@ $filter-font-size: 16px;
 				display: block;
 				padding: 0;
 				margin: em(8) em(16);
-				transition: color 0.25s ease-in-out;
+				@include media-breakpoint-down(default) {
+					padding: em(5) em(16) em(4);
+					margin: em(4) em(0);
+					border-radius: em(24);
+					transition: all 0.25s ease-in-out;
+				}
 			}
 
 			> input[type="radio"] {
@@ -71,6 +77,11 @@ $filter-font-size: 16px;
 
 				&:checked + span {
 					color: $tertiary;
+
+					@include media-breakpoint-down(default) {
+						color: $white;
+						background: $tertiary;
+					}
 				}
 			}
 		}
@@ -86,6 +97,9 @@ $filter-font-size: 16px;
 			left: 0;
 			background: $tertiary;
 			will-change: transform;
+			@include media-breakpoint-down(default) {
+				display: none;
+			}
 		}
 	}
 

@@ -1,27 +1,53 @@
-@import "../../../themes/v1/scss/common";
+@import '../../../themes/v1/scss/common';
 
 .tile {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	background: $grey;
 
-	h2 {
-		margin: 0;
+	&__inner {
+		height: 100%;
+		position: relative;
 	}
 
-	&--red {
-		background: firebrick;
+	&__side {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		backface-visibility: hidden;
+		transition: transform 0.5s ease-in-out;
+		will-change: tranform;
+
+		&-front {
+			z-index: 2;
+			background: blue;
+		}
+
+		&-back {
+			z-index: 1;
+			transform: rotateY(-180deg);
+			background: greenyellow;
+		}
 	}
 
-	&--blue {
-		background: cadetblue;
+	// flippable type
+	&--flippable {
+		background: transparent;
 	}
 
-	&--green {
-		background: palegreen;
-	}
+	// flipped state
+	&--flipped {
 
-	&--yellow {
-		background: gold;
+		.tile__side {
+
+			&-front {
+				transform: rotateY(180deg);
+			}
+
+			&-back {
+				transform: rotateY(0deg);
+			}
+		}
 	}
 }

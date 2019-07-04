@@ -4,16 +4,40 @@ import './_tile.scss';
 
 interface IProps {
 	className?: string,
-	children?: React.ReactNode,
+	clickable?: boolean,
+	children?: React.ReactNode | React.ReactElement[],
 	tags?: string | string[],
 }
 
-const Tile : React.FC<IProps> = (props) => {
+const TileSide : React.FC<IProps> = (props) => {
 
-	const componentClass = classNames(props.className, 'tile');
+	const [flipped, setFlipped] = React.useState(false);
+
+	const isFlippable = () => {
+		const isTileSide = () => {
+			return typeof (props.children as React.ReactElement[]).find((n: any) => {
+				const {name} = n.type;
+				return name === 'TileSide'
+			}) === 'object';
+		};
+		return Array.isArray(props.children) && isTileSide();
+	};
+
+	const handleOnClick = () => {
+		if (isFlippable()) {
+			setFlipped((flipped) => !flipped);
+		}
+	};
+
+	const componentClass = classNames(
+		props.className,
+		'tile',
+		{'tile--flippable': isFlippable()},
+		{'tile--flipped': flipped}
+	);
 
 	return (
-		<div className={componentClass} data-tags={props.tags}>
+		<div className={componentClass} data-tags={props.tags} onClick={handleOnClick}>
 			<div className="tile__inner">
 				{props.children}
 			</div>
@@ -21,4 +45,4 @@ const Tile : React.FC<IProps> = (props) => {
 	);
 };
 
-export default Tile;
+export default TileSide;
