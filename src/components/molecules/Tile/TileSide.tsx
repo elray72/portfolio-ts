@@ -10,13 +10,11 @@ interface IProps {
 }
 
 const TileSide: React.FC<IProps> = (props) => {
-	const [active, setActive] = React.useState(props.active);
 
 	const componentClass = classNames(
 		props.className,
 		'tile__side',
 		`tile__side-${props.side}`,
-		//{'tile__side--active': active}
 	);
 
 	return (
