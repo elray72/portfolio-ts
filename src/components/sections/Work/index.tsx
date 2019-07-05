@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import './_work.scss';
 
+import Image from '../../atoms/Image';
 import Tile from '../../molecules/Tile';
 import TileSide from '../../molecules/Tile/TileSide';
 import Shuffler from '../../organisms/Shuffler';
@@ -25,28 +26,51 @@ const Skills: React.FC<IProps> = (props) => {
 				<Shuffler className="work__shuffler" name="work_shuffler">
 					<Tile tags="JS|React" flip={true}>
 						<TileSide side="front">
-							React
+							<Image src="/static/img/clients/darwin-intelligence.svg" title="Darwin Intelligence" />
 						</TileSide>
 						<TileSide side="back">
 							React other
 						</TileSide>
 					</Tile>
-					<Tile tags="JS|React|.NET">
-						<div>
-							i30n
-						</div>
+					<Tile tags="JS|React|.NET" flip={true}>
+						<TileSide side="front">
+							<Image src="/static/img/clients/n-logo.svg" title="i30N" />
+						</TileSide>
+						<TileSide side="back">
+							React other
+						</TileSide>
 					</Tile>
-					<Tile tags="jQuery|.NET">
-						Charter Hall
+					<Tile tags="jQuery|.NET" flip={true}>
+						<TileSide side="front">
+							<Image src="/static/img/clients/charter-hall.svg" title="Charter Hall" />
+						</TileSide>
+						<TileSide side="back">
+							React other
+						</TileSide>
 					</Tile>
 					<Tile tags="JS|React">
-						Furphy
+						<TileSide side="front">
+							<Image src="/static/img/clients/furphy.png" title="Furhpy" auto="height" />
+						</TileSide>
+						<TileSide side="back">
+							React other
+						</TileSide>
 					</Tile>
 					<Tile tags="JS">
-						StarTrack
+						<TileSide side="front">
+							<Image src="/static/img/clients/startrack.svg" title="StarTrack" />
+						</TileSide>
+						<TileSide side="back">
+							React other
+						</TileSide>
 					</Tile>
 					<Tile tags="JS|React">
-						Design my Hyundai
+						<TileSide side="front">
+							<Image src="/static/img/clients/hyundai.svg" title="Hyundai" padding={32} />
+						</TileSide>
+						<TileSide side="back">
+							React other
+						</TileSide>
 					</Tile>
 				</Shuffler>
 			</div>

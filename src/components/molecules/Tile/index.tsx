@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const Tile : React.FC<IProps> = (props) => {
-	const [flipped, setFlipped] = React.useState(props.flip);
+	const [flipped, setFlipped] = React.useState(false);
 
 	const handleOnClick = () => {
 		if (props.flip) {
