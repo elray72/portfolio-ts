@@ -1,16 +1,26 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import styled from 'styled-components';
 import './_tile.scss';
 
 interface IProps {
 	active?: boolean;
+	bgColor?: string,
 	className?: string;
 	children?: React.ReactNode;
 	side?: string;
 }
 
-const TileSide: React.FC<IProps> = (props) => {
+interface IDiv {
+	bgColor?: string,
+}
 
+const Div = styled.div`
+	background-color: ${(p: IDiv) => p.bgColor ? p.bgColor : 'transparent'};
+`;
+
+const TileSide: React.FC<IProps> = (props) => {
+console.log(props);
 	const componentClass = classNames(
 		props.className,
 		'tile__side',
@@ -18,9 +28,9 @@ const TileSide: React.FC<IProps> = (props) => {
 	);
 
 	return (
-		<div className={componentClass}>
+		<Div className={componentClass} bgColor={props.bgColor}>
 			{props.children}
-		</div>
+		</Div>
 	);
 };
 

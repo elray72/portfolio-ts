@@ -16,12 +16,18 @@
 		height: 100%;
 		width: 100%;
 		backface-visibility: hidden;
-		transition: transform 0.5s ease-in-out;
+		transition: transform 0.5s ease-in-out,
+					filter 0.25s ease-in-out;
 		will-change: tranform;
 
 		&-front {
 			z-index: 2;
-			background: blue;
+			@media (pointer: fine) {
+				filter: grayscale(80%);
+				&:hover {
+					filter: grayscale(0);
+				}
+			}
 		}
 
 		&-back {

@@ -25,15 +25,23 @@ const Skills: React.FC<IProps> = (props) => {
 				</div>
 				<Shuffler className="work__shuffler" name="work_shuffler">
 					<Tile tags="JS|React" flip={true}>
-						<TileSide side="front">
+						<TileSide side="front" bgColor="#3b4b6b">
 							<Image src="/static/img/clients/darwin-intelligence.svg" title="Darwin Intelligence" />
 						</TileSide>
 						<TileSide side="back">
 							React other
 						</TileSide>
 					</Tile>
+					<Tile tags="JS|React" flip={true}>
+						<TileSide side="front" bgColor="#fefce1">
+							<Image src="/static/img/clients/furphy.png" title="Furhpy" auto="height" />
+						</TileSide>
+						<TileSide side="back">
+							React other
+						</TileSide>
+					</Tile>
 					<Tile tags="JS|React|.NET" flip={true}>
-						<TileSide side="front">
+						<TileSide side="front" bgColor="#aacae6">
 							<Image src="/static/img/clients/n-logo.svg" title="i30N" />
 						</TileSide>
 						<TileSide side="back">
@@ -41,32 +49,24 @@ const Skills: React.FC<IProps> = (props) => {
 						</TileSide>
 					</Tile>
 					<Tile tags="jQuery|.NET" flip={true}>
-						<TileSide side="front">
+						<TileSide side="front" bgColor="#006fb8">
 							<Image src="/static/img/clients/charter-hall.svg" title="Charter Hall" />
 						</TileSide>
 						<TileSide side="back">
 							React other
 						</TileSide>
 					</Tile>
-					<Tile tags="JS|React">
-						<TileSide side="front">
-							<Image src="/static/img/clients/furphy.png" title="Furhpy" auto="height" />
+					<Tile tags="JS|React" flip={true}>
+						<TileSide side="front" bgColor="#e4dcd3">
+							<Image src="/static/img/clients/hyundai.svg" title="Hyundai" padding={24} auto="height" />
 						</TileSide>
 						<TileSide side="back">
 							React other
 						</TileSide>
 					</Tile>
-					<Tile tags="JS">
-						<TileSide side="front">
+					<Tile tags="JS" flip={true}>
+						<TileSide side="front" bgColor="#f2f0ed">
 							<Image src="/static/img/clients/startrack.svg" title="StarTrack" />
-						</TileSide>
-						<TileSide side="back">
-							React other
-						</TileSide>
-					</Tile>
-					<Tile tags="JS|React">
-						<TileSide side="front">
-							<Image src="/static/img/clients/hyundai.svg" title="Hyundai" padding={32} />
 						</TileSide>
 						<TileSide side="back">
 							React other
