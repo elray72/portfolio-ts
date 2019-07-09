@@ -5,22 +5,17 @@ import './_tile.scss';
 
 interface IProps {
 	active?: boolean;
-	bgColor?: string,
+	bgColor?: string;
 	className?: string;
 	children?: React.ReactNode;
 	side?: string;
 }
 
-interface IDiv {
-	bgColor?: string,
-}
-
 const Div = styled.div`
-	background-color: ${(p: IDiv) => p.bgColor ? p.bgColor : 'transparent'};
+	background-color: ${(p: IProps) => p.bgColor ? p.bgColor : 'transparent'};
 `;
 
 const TileSide: React.FC<IProps> = (props) => {
-console.log(props);
 	const componentClass = classNames(
 		props.className,
 		'tile__side',
@@ -28,7 +23,7 @@ console.log(props);
 	);
 
 	return (
-		<Div className={componentClass} bgColor={props.bgColor}>
+		<Div className={componentClass} {...props}>
 			{props.children}
 		</Div>
 	);

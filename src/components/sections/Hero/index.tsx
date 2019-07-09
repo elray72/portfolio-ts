@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import './_hero.scss';
 
 interface IProps {
-	className?: string,
+	className?: string;
 }
 
 const Home: React.FC<IProps> = (props) => {

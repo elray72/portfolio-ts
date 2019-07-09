@@ -8,18 +8,13 @@ interface IProps {
 	auto?: string;
 	children?: React.ReactNode;
 	className?: string;
-	padding?: number,
+	padding?: number;
 	src: string;
 	title: string;
 }
 
-interface IFigure {
-	className?: string;
-	padding?: number,
-}
-
 const Figure = styled.figure`
-	padding: ${(p: IFigure) => p.padding ? em(p.padding) : em(16)};
+	padding: ${(p: IProps) => p.padding ? em(p.padding) : em(16)};
 `;
 
 export const Image: React.FC<IProps> = (props) => {
@@ -28,10 +23,8 @@ export const Image: React.FC<IProps> = (props) => {
 		{'image--ah': props.auto === 'height'}
 	);
 
-	console.log(props.title, props.padding);
-
 	return (
-		<Figure className={componentClass} padding={props.padding}>
+		<Figure className={componentClass} {...props}>
 			<img src={props.src} alt={props.title} />
 		</Figure>
 	);

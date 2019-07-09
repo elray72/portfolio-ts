@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import './_tags.scss';
 
 interface IProps {
-  className?: string,
-  values: string[]
+  className?: string;
+  values: string[];
 }
 
 const Tags: React.FC<IProps> = (props) => {

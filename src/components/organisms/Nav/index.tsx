@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import './_nav.scss';
 
 interface IProps {
-	children: any,
-	className?: string,
+	children: any;
+	className?: string;
 }
 
 const Nav: React.FC<IProps> = (props) => {
