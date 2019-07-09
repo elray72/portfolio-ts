@@ -15,9 +15,9 @@ const Home: React.FC<IProps> = (props) => {
 				<h1 className="hero__heading">Ray Ranola</h1>
 				<p className="hero__text intro">
 					Full stack developer at VMLY&R Sydney.
-					<br />
+					<br/>
 				</p>
-				<p className="hero__text" />
+				<p className="hero__text"/>
 			</div>
 		</div>
 	);

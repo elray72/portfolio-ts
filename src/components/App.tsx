@@ -14,7 +14,7 @@ const App: React.FC = () => {
   return (
     <React.Fragment>
       <Helmet titleTemplate="Ray Ranola - %s" defaultTitle="Ray Ranola - Full Stack Developer">
-        <meta name="description" content="" />
+        <meta name="description" content=""/>
       </Helmet>
       <Header>
         <Nav>
@@ -28,8 +28,8 @@ const App: React.FC = () => {
       </Header>
       <main className="main">
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/test" component={Test} />
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/test" component={Test}/>
         </Switch>
       </main>
     </React.Fragment>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Helmet from 'react-helmet';
 import { Events } from '../../../utils/helpers/events';
 import classNames from 'classnames';
 import './_video.scss';
@@ -10,6 +11,7 @@ interface IProps {
 	loop?: boolean;
 	muted?: boolean;
 	preload?: string;
+	poster?: string;
 	src: string;
 }
 
@@ -34,7 +36,11 @@ export const Video: React.FC<IProps> = (props) => {
 
 	return (
 		<div className={componentClass}>
-			<video src={props.src} ref={videoRef} {...props} />
+			<Helmet>
+				<link rel="preload" as="image" href={props.poster}/>
+				<link rel="preload" as="video" href={props.src}/>
+			</Helmet>
+			<video src={props.src} ref={videoRef} {...props}/>
 		</div>
 	);
 };

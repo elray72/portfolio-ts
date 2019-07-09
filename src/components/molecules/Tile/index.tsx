@@ -11,7 +11,6 @@ interface IProps {
 	tags?: string | string[],
 }
 
-
 const Tile : React.FC<IProps> = (props) => {
 
 	const [flipped, setFlipped] = React.useState(false);
