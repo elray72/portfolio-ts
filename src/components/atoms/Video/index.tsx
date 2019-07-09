@@ -30,9 +30,7 @@ export const Video: React.FC<IProps> = (props) => {
 		});
 	}
 
-	const componentClass = classNames(
-		props.className, 'video'
-	);
+	const componentClass = classNames(props.className, 'video');
 
 	return (
 		<div className={componentClass}>

@@ -1,4 +1,4 @@
-@import "../../../themes/v1/scss/common";
+@import '../../../themes/v1/scss/common';
 
 .video {
 	display: block;
@@ -6,6 +6,25 @@
 	width: 100%;
 	padding: 0;
 	margin: 0;
+
+	&--background {
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: rgba($black, 0.5);
+			z-index: 1;
+		}
+
+		~ {
+			z-index: 2;
+		}
+	}
 
 	video {
 		display: block;

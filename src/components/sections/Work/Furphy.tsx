@@ -18,7 +18,7 @@ const WorkTile: React.FC<IProps> = (props) => {
 			</TileSide>
 			<TileSide side="back">
 				<Video
-					className="video--background"
+					className="tile__bg video--background"
 					src="/static/video/stubby.mp4"
 					poster="/static/video/stubby.jpg"
 					autoPlay={false}
