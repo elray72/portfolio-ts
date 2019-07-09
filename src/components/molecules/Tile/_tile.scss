@@ -18,16 +18,16 @@
 		backface-visibility: hidden;
 		transition: transform 0.5s ease-in-out,
 					filter 0.25s ease-in-out;
-		will-change: tranform;
+		will-change: transform;
 		overflow: hidden;
 
 		&-front {
 			z-index: 2;
 			@media (pointer: fine) {
-				filter: grayscale(80%);
-				&:hover {
-					filter: grayscale(0);
-				}
+				//transform: transform(80%);
+				//&:hover {
+				//	filter: grayscale(0);
+				//}
 			}
 		}
 

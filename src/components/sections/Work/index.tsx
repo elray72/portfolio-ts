@@ -35,10 +35,11 @@ const Skills: React.FC<IProps> = (props) => {
 						</TileSide>
 						<TileSide side="back">
 							<Video
-								src="/static/video/stubby_16x9.mp4"
+								src="/static/video/stubby.mp4"
 								autoPlay={false}
 								loop={false}
 								muted={true}
+								preload="auto"
 								listens="toggle:furphy"
 							/>
 						</TileSide>
