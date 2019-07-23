@@ -7,11 +7,12 @@ import TileSide from '../../molecules/Tile/TileSide';
 
 interface IProps {
 	tags?: string;
+	transition?: string;
 }
 
 const WorkTile: React.FC<IProps> = (props) => {
 	return (
-		<Tile tags={props.tags} flip={true}>
+		<Tile {...props}>
 			<TileSide side="front" bgColor="#3b4b6b">
 				<Image src="/static/img/clients/darwin-intelligence.svg" title="Darwin Intelligence" />
 			</TileSide>

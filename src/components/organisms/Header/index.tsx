@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { Events } from '../../../utils/helpers/events';
 import './_header.scss';
 
 import Hamburger from '../../atoms/Hamburger';
@@ -12,14 +13,16 @@ interface IProps {
 const Header: React.FC<IProps> = (props) => {
 	const [expanded, setExpanded] = React.useState(false);
 
-	const toggleExpandedState = () => setExpanded((expanded) => !expanded);
+	const toggleExpandedState = () => setExpanded((expanded: boolean) => !expanded);
 	const handleHamburgerClick = () => toggleExpandedState();
 	const handleOverlayClick = () => {
 		// if wrapper prevents further click of overlay while transitioning out
 		if (expanded) {
-			toggleExpandedState()
+			toggleExpandedState();
 		}
 	};
+
+	Events.subscribe('header:expand', (expanded: boolean) => setExpanded(expanded));
 
 	const headerClass = classNames({
 		'header': true,

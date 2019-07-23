@@ -2,7 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import MixItUp from 'mixitup';
 import mixitupConfig from './mixitupConfig';
+import { Events } from '../../../utils/helpers/events';
 import './_shuffler.scss';
+
 import Filter from './Filter';
 
 interface IProps {
@@ -14,6 +16,7 @@ interface IProps {
 const Shuffler: React.FC<IProps> = (props) => {
 	const shufflerRef = React.useRef<HTMLUListElement>(null);
 	const mixitupRef = React.useRef<typeof MixItUp>(null);
+	const shufflerChange = `${props.name}:change`;
 
 	React.useEffect(() => {
 		mixitupRef.current = MixItUp(shufflerRef.current, mixitupConfig);
@@ -22,6 +25,7 @@ const Shuffler: React.FC<IProps> = (props) => {
 	const handleFilterClick = (e: React.MouseEvent<HTMLInputElement>) => {
 		const filterValue = (e.target as HTMLInputElement).value;
 		mixitupRef.current.filter(`[data-tag*="${filterValue}"]`);
+		Events.dispatch(shufflerChange, false); // emit name_of_shuffler:change
 	};
 
 	const handleAllClick = () => {
@@ -43,7 +47,7 @@ const Shuffler: React.FC<IProps> = (props) => {
 			<ul className="shuffler__list" ref={shufflerRef}>
 				{(props.children || []).map((n: React.ReactElement) => (
 					<li className={`shuffler__list-item`} data-tag={n.props.tags} key={`${props.name}_item_${k++}`}>
-						{n}
+						{React.cloneElement(n, { listens: shufflerChange })}
 					</li>
 				))}
 			</ul>

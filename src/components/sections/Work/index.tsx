@@ -14,7 +14,7 @@ interface IProps {
 	className?: string;
 }
 
-const Work: React.FC<IProps> = (props) => {
+const Work: React.FC<{}> = (props: any) => {
 	const componentClass = classNames(props.className, 'work');
 
 	return (
@@ -25,12 +25,12 @@ const Work: React.FC<IProps> = (props) => {
 					<p className="work__header-desc">Some of my favourite projects categorized by tech.</p>
 				</div>
 				<Shuffler className="work__shuffler" name="work_shuffler">
-					<Darwin tags="JS|React" />
-					<Furphy tags="JS|React" />
-					<I30N tags="JS|React|.NET" />
-					<CharterHall tags=".NET|jQuery" />
-					<Hyundai tags="JS|React|.NET" />
-					<StarTrack tags="JS" />
+					<Darwin tags="JS|React" transition="flip" />
+					<Furphy tags="JS|React" transition="flip" />
+					<I30N tags="JS|React|.NET" transition="flip" />
+					<CharterHall tags=".NET|jQuery" transition="flip" />
+					<Hyundai tags="JS|React|.NET" transition="flip" />
+					<StarTrack tags="JS" transition="flip" />
 				</Shuffler>
 			</div>
 		</div>

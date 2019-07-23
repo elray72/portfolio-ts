@@ -90,7 +90,7 @@ $filter-font-size: 16px;
 			display: block;
 			height: em(3);
 			width: em(1);
-			transition: transform 0.25s timing(ease-out-back);
+			transition: transform 0.25s cubic-bezier(ease-out-back);
 			transform: translateX(0px) scaleX(0);
 			position: absolute;
 			bottom: 0;

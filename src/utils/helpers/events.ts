@@ -1,6 +1,6 @@
 export const Events = {
 	events: {} as any,
-	dispatch: function(event: string, data: any) {
+	dispatch: function(event: string, data?: any) {
 		if (!this.events[event]) return;
 		this.events[event].forEach((callback: Function) => callback(data));
 	},

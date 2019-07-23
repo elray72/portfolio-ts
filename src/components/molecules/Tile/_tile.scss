@@ -16,19 +16,14 @@
 		height: 100%;
 		width: 100%;
 		backface-visibility: hidden;
-		transition: transform 0.5s ease-in-out,
-					filter 0.25s ease-in-out;
+		transition: transform 0.5s cubic-bezier(ease-in-out-circ);
+		//transition: transform 0.5s timing(ease-in-out-expo);
+		//transition: transform 0.5s timing(ease-in-out-quad);
 		will-change: transform;
 		overflow: hidden;
 
 		&-front {
 			z-index: 2;
-			@media (pointer: fine) {
-				//transform: transform(80%);
-				//&:hover {
-				//	filter: grayscale(0);
-				//}
-			}
 		}
 
 		&-back {
@@ -51,25 +46,28 @@
 
 	}
 
-	// flippable type
+	// TRANSITIONS
 	&--flip {
 		background: transparent;
-	}
 
-	// flipped state
-	&--flipped {
+		.tile__inner {
+			perspective: 1000px;
+		}
 
-		.tile__side {
+		&-active {
 
-			&-front {
-				transform: rotateY(180deg);
-			}
+			.tile__side {
 
-			&-back {
-				transform: rotateY(0deg);
+				&-front {
+					transform: rotateY(180deg);
+				}
 
-				.video {
-					opacity: 1;
+				&-back {
+					transform: rotateY(0deg);
+
+					.video {
+						opacity: 1;
+					}
 				}
 			}
 		}

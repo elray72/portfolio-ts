@@ -5,29 +5,39 @@ import './_tile.scss';
 
 interface IProps {
 	className?: string,
-	emits?: string,
-	flip?: boolean,
 	children?: React.ReactNode | React.ReactElement[],
+	emits?: string,
+	listens?: string,
+	transition?: string,
 	tags?: string | string[],
 }
 
 const Tile : React.FC<IProps> = (props) => {
 
-	const [flipped, setFlipped] = React.useState(false);
+	const [active, setActive] = React.useState(false);
+
+	if (props.listens) {
+		Events.subscribe(props.listens, (isActive: boolean) => {
+			if (props.transition) {
+				setActive(isActive);
+			}
+		});
+	}
 
 	React.useEffect(() => {
-		if (props.emits) Events.dispatch(props.emits, flipped);
-	}, [flipped, props.emits]);
+		if (props.emits) Events.dispatch(props.emits, active);
+	}, [active, props.emits]);
 
 	const handleOnClick = () => {
-		if (props.flip) setFlipped((flipped) => !flipped);
+		if (props.transition) setActive((active) => !active);
 	};
 
+	const transitionClass = props.transition ? `tile--${props.transition}` : null;
 	const componentClass = classNames(
 		props.className,
 		'tile',
-		{'tile--flip': props.flip},
-		{'tile--flipped': flipped}
+		transitionClass,
+		{[`${transitionClass}-active`]: active},
 	);
 
 	return (

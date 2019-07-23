@@ -7,11 +7,13 @@ import TileSide from '../../molecules/Tile/TileSide';
 
 interface IProps {
 	tags?: string;
+	listens?: string;
+	transition?: string;
 }
 
 const WorkTile: React.FC<IProps> = (props) => {
 	return (
-		<Tile tags={props.tags} flip={true}>
+		<Tile {...props}>
 			<TileSide side="front" bgColor="#f2f0ed">
 				<Image src="/static/img/clients/startrack.svg" title="StarTrack" />
 			</TileSide>
