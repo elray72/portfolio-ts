@@ -1,6 +1,6 @@
 import React from 'react';
 import MixItUp from 'mixitup';
-import '../../../utils/extensions/string';
+import '../../../common/extensions/string';
 import './_shuffler.scss';
 
 interface IProps {

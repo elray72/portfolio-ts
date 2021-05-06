@@ -2,35 +2,37 @@ import * as React from 'react';
 import classNames from 'classnames';
 import './_hamburger.scss';
 
-interface IProps {
-	expanded?: boolean;
-	onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+interface IHamburger {
+  defaultExpanded?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Hamburger: React.FC<IProps> = (props) => {
-	const [expanded, setExpanded] = React.useState(props.expanded);
+const Hamburger: React.FC<IHamburger> = ({ defaultExpanded, onClick }) => {
+  const [isExpanded, setExpanded] = React.useState(defaultExpanded || false);
 
-	React.useLayoutEffect(() => {
-		setExpanded(props.expanded);
-	}, [props.expanded]);
+  React.useEffect(() => {
+    setExpanded(isExpanded);
+  }, [isExpanded]);
 
-	const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-		if (props.onClick) props.onClick(e);
-		else setExpanded((expanded) => !expanded);
-	};
+  const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (onClick) onClick(e);
+    setExpanded(x => !x);
+  };
 
-	const componentClass = classNames({
-		'hamburger': true,
-		'hamburger--expanded': expanded,
-	});
-
-	return (
-		<button type="button" className={componentClass} onClick={handleOnClick}>
-			<span className="hamburger__bar" />
-			<span className="hamburger__bar" />
-			<span className="hamburger__bar" />
-		</button>
-	);
+  return (
+    <button
+      type="button"
+      className={classNames({
+        hamburger: true,
+        'hamburger--expanded': isExpanded,
+      })}
+      onClick={handleOnClick}
+    >
+      <span className="hamburger__bar" />
+      <span className="hamburger__bar" />
+      <span className="hamburger__bar" />
+    </button>
+  );
 };
 
 export default Hamburger;

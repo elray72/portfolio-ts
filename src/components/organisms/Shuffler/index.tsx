@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import MixItUp from 'mixitup';
 import mixitupConfig from './mixitupConfig';
-import { Events } from '../../../utils/helpers/events';
+import { Events } from '../../../common/helpers/events';
 import './_shuffler.scss';
 
 import Filter from './Filter';

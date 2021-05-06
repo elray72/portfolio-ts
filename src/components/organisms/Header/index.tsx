@@ -1,52 +1,53 @@
 import * as React from 'react';
+import { useContext } from 'react';
 import classNames from 'classnames';
-import { Events } from '../../../utils/helpers/events';
+import { Events } from '../../../common/helpers/events';
 import './_header.scss';
 
 import Hamburger from '../../atoms/Hamburger';
 import Nav from '../../organisms/Nav';
+import { AppContext } from '../../../App';
 
-interface IProps {
-	children: React.ReactElement<typeof Nav>;
+interface IHeader {
+  children?: React.ReactNode;
+  isSticky?: boolean;
 }
 
-const Header: React.FC<IProps> = (props) => {
-	const [expanded, setExpanded] = React.useState(false);
+const Header: React.FC<IHeader> = ({ children, isSticky: bool = false }) => {
+  const { appContext, setAppContext } = useContext(AppContext);
 
-	const toggleExpandedState = () => setExpanded((expanded: boolean) => !expanded);
-	const handleHamburgerClick = () => toggleExpandedState();
-	const handleOverlayClick = () => {
-		// if wrapper prevents further click of overlay while transitioning out
-		if (expanded) {
-			toggleExpandedState();
-		}
-	};
+  // const toggleExpandedState = () =>
+  //   setExpanded((expanded: boolean) => !expanded);
+  // const handleHamburgerClick = () => toggleExpandedState();
+  // const handleOverlayClick = () => {
+  //   // if wrapper prevents further click of overlay while transitioning out
+  //   if (isExpanded) {
+  //     toggleExpandedState();
+  //   }
+  // };
+  //
+  // Events.subscribe('header:expand', (expanded: boolean) =>
+  //   setExpanded(expanded),
+  // );
+  //
+  // const menuClass = classNames({
+  //   header__menu: true,
+  //   'header__menu--expanded': isExpanded,
+  // });
 
-	Events.subscribe('header:expand', (expanded: boolean) => setExpanded(expanded));
+  const handleOverlayClick = () => {};
 
-	const headerClass = classNames({
-		'header': true,
-		'header--sticky': true,
-		'header--expanded': expanded,
-	});
-
-	const menuClass = classNames({
-		'header__menu': true,
-		'header__menu--expanded': expanded,
-	});
-
-	return (
-		<React.Fragment>
-			<header className={headerClass}>
-				<div className="header__inner">
-					<div className="header__logo" />
-					<div className={menuClass}>{props.children}</div>
-				</div>
-				<div className="header__overlay" onClick={handleOverlayClick} />
-			</header>
-			<Hamburger expanded={expanded} onClick={handleHamburgerClick} />
-		</React.Fragment>
-	);
+  return (
+    <header
+      className={classNames('header', {
+        'header--sticky': true,
+        'header--expanded': appContext.isMenuOpen,
+      })}
+    >
+      <div className="header__inner">{children}</div>
+      <div className="header__overlay" onClick={handleOverlayClick} />
+    </header>
+  );
 };
 
 export default Header;

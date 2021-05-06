@@ -2,12 +2,12 @@ import React from 'react';
 import classNames from 'classnames';
 import Swiper from 'react-id-swiper';
 import swiperConfig from './swiperConfig';
-import 'react-id-swiper/src/styles/scss/swiper.scss';
+import 'swiper/src/swiper.scss';
 import './_skills.scss';
 
-import Slide from '../../molecules/Slide';
-import Card from '../../molecules/Card';
-import Tags from '../../organisms/Tags';
+import Slide from '../../../../components/molecules/Slide';
+import Card from '../../../../components/molecules/Card';
+import Tags from '../../../../components/organisms/Tags';
 
 interface IProps {
 	className?: string;

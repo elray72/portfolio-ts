@@ -7,5 +7,5 @@ export const Events = {
 	subscribe: function(event: string, callback: Function) {
 		if (!this.events[event]) this.events[event] = [];
 		this.events[event].push(callback);
-	}
+	},
 };

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './_work.scss';
 
-import Image from '../../atoms/Image';
-import Video from '../../atoms/Video';
-import Tile from '../../molecules/Tile';
-import TileSide from '../../molecules/Tile/TileSide';
+import Image from '../../../../components/atoms/Image';
+import Video from '../../../../components/atoms/Video';
+import Tile from '../../../../components/molecules/Tile';
+import TileSide from '../../../../components/molecules/Tile/TileSide';
 
 interface IProps {
 	tags?: string;

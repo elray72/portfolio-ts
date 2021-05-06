@@ -1,14 +1,13 @@
-# Cruft
-*~
-*#
-.#*
-.DS_Store
+# macOS
+*.DS_Store
+.AppleDouble
+.LSOverride
 
-# Test
+# tests
 coverage
 .eslintcache
 
-# Logs
+# logs
 *.log
 
 # npm & yarn
@@ -19,11 +18,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 yarn.lock*
-package-lock.json
-# Editor/IDE
+
+# ide
 .idea
 packages/api/etc/
 
+# project
 /dist
 /build
 /.env

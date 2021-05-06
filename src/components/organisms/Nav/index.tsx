@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { Events } from '../../../utils/helpers/events';
+import { Events } from '../../../common/helpers/events';
 import './_nav.scss';
 
 interface IProps {

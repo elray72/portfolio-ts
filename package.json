@@ -1,6 +1,8 @@
 {
   "name": "portfolio-ts",
   "version": "1.0.0",
+  "repository": "https://github.com/elray72/portfolio-ts",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -52,6 +54,6 @@
     "sanitize.css": "^10.0.0",
     "styled-components": "^4.3.2",
     "swiper": "^4.5.0",
-    "typescript": "3.5.1"
+    "typescript": "3.8.2"
   }
 }
